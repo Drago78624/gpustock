@@ -1,0 +1,81 @@
+@use "../utils/breakpoints" as u;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  color: var(--clr-text);
+
+  @include u.breakpoint-up(md) {
+    justify-content: space-between;
+  }
+
+  &__hamburger {
+    font-size: 1.5rem;
+
+    @include u.breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    margin-inline: auto;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include u.breakpoint-up(md) {
+      margin-inline: 0;
+    }
+  }
+
+  &__links {
+    display: none;
+    font-size: 1.3rem;
+
+    @include u.breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    transition: color 200ms;
+
+    a {
+      color: inherit;
+    }
+
+    &.active {
+      color: var(--primary);
+    }
+
+
+    &:not(:last-child)::after {
+      content: "";
+      display: block;
+      width: 0%;
+      height: 5px;
+      background-color: var(--primary);
+      transition: width 200ms;
+      -webkit-transition: width 200ms;
+      -moz-transition: width 200ms;
+      -ms-transition: width 200ms;
+      -o-transition: width 200ms;
+    }
+
+    &:not(:last-child):hover {
+      color: var(--primary);
+    }
+
+    &:not(:last-child):hover::after {
+      width: 70%;
+    }
+
+    &.active::after {
+      width: 70%;
+    }
+  }
+}

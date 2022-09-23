@@ -1,0 +1,13 @@
+.purple {
+    color: var(--primary);
+}
+
+.container {
+    width: min(100%, 62.5rem);
+    margin-inline: auto;
+}
+
+.btn {
+    background-color: var(--primary);
+    padding: 0.5em 1em;
+}
