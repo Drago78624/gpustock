@@ -23,6 +23,9 @@
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
+    a {
+      color: var(--clr-text);
+    }
 
     @include u.breakpoint-up(md) {
       margin-inline: 0;
